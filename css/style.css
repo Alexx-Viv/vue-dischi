@@ -25,6 +25,12 @@ header {
   display: inline-block;
 }
 
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 header img {
   height: 50px;
 }

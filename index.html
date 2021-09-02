@@ -18,15 +18,20 @@
     <header>
       <div class="container">
         <img src="./img/spotify-logo.png" alt="">
+        <div class="custom-select" style="width:200px">
+          <select>
+            <option v-for=" genre in genreList" @click="filterList(genre)">{{genre}}</option>
+          </select>
+        </div>
       </div>
     </header>
     <main class="container">
       <section id="album-container">
-        <div v-for="(album, index) in albumList" class="card">
-          <img :src="albumList[index].poster" alt="">
-          <h2 class="title">{{albumList[index].title}}</h2>
-          <address class="author">{{albumList[index].author}}</address>
-          <time datetime="1988" class="year">{{albumList[index].year}}</time>
+        <div v-for="(album, index) in filteredList" class="card">
+          <img :src="filteredList[index].poster" alt="">
+          <h2 class="title">{{filteredList[index].title}}</h2>
+          <address class="author">{{filteredList[index].author}}</address>
+          <time datetime="1988" class="year">{{filteredList[index].year}}</time>
         </div>
       </section>
     </main>
